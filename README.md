@@ -60,4 +60,4 @@ Cows can go up stairs but not down.
 
 ---
 
-If you have another fun fact for this repo, feel free to make a PR.
+If you have another fun fact for this repo, feel free to make a PR. I'll even give you credit 😉
