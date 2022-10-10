@@ -45,11 +45,13 @@ const prepareArray = (linkedinArr) => {
 const connectAndEndorse = async (browser, link, iter) => {
   // create new tab
   const page = await browser.newPage();
-
+  
   // set up listener to log out anything we "console.log"
   page.on('console', (msg) => {
-    for (let i = 0; i < msg._args.length; ++i)
+    if (msg._args){
+      for (let i = 0; i < msg._args.length; ++i)
       console.log(`${i}: ${msg._args[i]}`);
+    }
   });
 
   // navigate to url

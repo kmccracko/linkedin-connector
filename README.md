@@ -17,7 +17,7 @@ LINKEDINPASSWORD=$uper$ecretpa$$word!
 
 Fill out the `MYLINKEDIN` variable with your own linkedin url. We use your own profile as the first link to sign in to linkedin, so we don't run into snags when we open other pages.
 
-4. To launch the script, run `npm run start` in your terminal.
+3. To launch the script, run `npm run start` in your terminal.
 
 ### Updating the LinkedIn Array
 
@@ -44,7 +44,7 @@ Also be sure to not include your own linkedin anywhere except for the first item
 # Fun facts
 
 While building and testing this, linkedin picked up on bot behavior (good job linkedin!) and started giving me captchas, which renders this script useless. After waiting a day I stopped getting captchas and was able to wrap up this build. If it seems unoptimized, it probably is! Testing is troublesome when you're blocked from doing so.
-Either way, you shouldn't run into this unless you rerun this a bunch of times in a short span of time.
+Either way, you shouldn't run into this unless you rerun this a **LOT** in a short span of time.
 
 You can't endorse people for skills if you aren't connected yet. This means the script should be run once, and then once again some time later (after people can respond to your connection requests).
 
@@ -60,4 +60,4 @@ Cows can go up stairs but not down.
 
 ---
 
-If you have another fun fact for this repo, feel free to make a PR.
+If you have another fun fact for this repo, feel free to make a PR. I'll even give you credit 😉
