@@ -38,9 +38,6 @@ b;
 
 Copy out all elements from b and update the `linkedInArr` found in profiles.js.
 
-Be sure not to somehow remove the `MYLINKEDIN` variable, or else your computer will explode.
-Also be sure to not include your own linkedin anywhere except for the first item. Or else explosion.
-
 # Fun facts
 
 While building and testing this, linkedin picked up on bot behavior (good job linkedin!) and started giving me captchas, which renders this script useless. After waiting a day I stopped getting captchas and was able to wrap up this build. If it seems unoptimized, it probably is! Testing is troublesome when you're blocked from doing so.
@@ -48,15 +45,11 @@ Either way, you shouldn't run into this unless you rerun this a **LOT** in a sho
 
 You can't endorse people for skills if you aren't connected yet. This means the script should be run once, and then once again some time later (after people can respond to your connection requests).
 
-This script is going to open a whole bunch of tabs. If you don't want that to happen, consider running the script with segments of the linkedin array commented out, so that you're running batches instead of the whole thing. Just be sure to keep the `MYLINKEDIN` variable uncommented, or else explosions.
+This script is going to open a whole bunch of tabs. If you don't want that to happen, consider running the script with segments of the linkedin array commented out, so that you're running batches instead of the whole thing.
 
 This script might break for you; it hasn't been tested very thoroughly.
 
 The lighter was invented before the match.
-
-Chess was invented before checkers.
-
-Cows can go up stairs but not down.
 
 ---
 

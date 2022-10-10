@@ -1,7 +1,6 @@
 // See README on how best to update this array
+// targetLinks is the ONLY thing that should be updated in this file
 //
-//
-const protectedArr = [process.env.MYLINKEDIN];
 const targetLinks = [
   'https://www.linkedin.com/in/matthew-xing/',
   'https://www.linkedin.com/in/peter-makhnatch/',
@@ -57,7 +56,14 @@ const targetLinks = [
   'https://www.linkedin.com/in/christian-springer0/',
   'https://www.linkedin.com/in/michael-a-ruiz/',
   'www.linkedin.com/in/lily-hoong-2666991a6',
+  'https://www.linkedin.com/in/matthew-macdonald-659695104/',
+  'https://www.linkedin.com/in/kpange-kaitibi-522b31102/',
+  'https://www.linkedin.com/in/samantha-mills-185b16252/',
+  'https://www.linkedin.com/in/kyle-m/',
+  'www.linkedin.com/in/katherine-marrow-668a8a1a6',
+  'https://www.linkedin.com/in/iuliia-samokhvalova',
+  'https://www.linkedin.com/in/martin-carmona-41bbb586/',
+  'https://www.linkedin.com/in/pierce-yu-1370a1253/',
 ];
-const linkedinArr = [...protectedArr, ...targetLinks];
 
-module.exports = linkedinArr;
+module.exports = targetLinks;

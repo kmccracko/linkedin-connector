@@ -1,6 +1,6 @@
 require('dotenv').config();
 const puppeteer = require('puppeteer');
-const linkedinArr = require('./profiles');
+const targetLinks = require('./profiles');
 
 const initPuppeteer = async () => {
   // Viewport && Window size (this is set so that selectors don't change because of media queries)
@@ -18,39 +18,37 @@ const initPuppeteer = async () => {
   return browser;
 };
 
-const prepareArray = (linkedinArr) => {
-  // clean all elements, specialize the first
-  const newArr = linkedinArr.map((linkStr, i) => {
+const prepareArray = (targetLinks) => {
+  const myHandle =
+    process.env.MYLINKEDIN.split('/').slice(-1)[0] ||
+    process.env.MYLINKEDIN.split('/').slice(-2)[0];
+  const protectedArr = [
+    'https://www.linkedin.com/checkpoint/rm/sign-in-another-account?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fin%2F' +
+      myHandle +
+      '&fromSignIn=true',
+  ];
+  const targetLinksClean = targetLinks.map((linkStr, i) => {
+    // if duplicate of myHandle, make it an exact dup - we remove dups after this
+    if (i > 0 && linkStr.split('/').includes(myHandle)) return protectedArr[0];
     // if string is www, add https://
     const httpStr = linkStr[0] === 'w' ? 'https://' + linkStr : linkStr;
     // remove / from end
-    const cleanStr =
-      httpStr[httpStr.length - 1] === '/' ? httpStr.slice(0, -1) : httpStr;
-    // split by /s
-    const splitStr = cleanStr.split('/');
-    // get username as last element
-    const user = splitStr[splitStr.length - 1];
-
-    // if first link, create link to sign in. else, use clean string
-    return i === 0
-      ? 'https://www.linkedin.com/checkpoint/rm/sign-in-another-account?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fin%2F' +
-          user +
-          '&fromSignIn=true'
-      : cleanStr;
+    return httpStr[httpStr.length - 1] === '/' ? httpStr.slice(0, -1) : httpStr;
   });
 
-  return newArr;
+  // remove all dups, including the ones we created intentionally
+  return Array.from(new Set([...protectedArr, ...targetLinksClean]));
 };
 
 const connectAndEndorse = async (browser, link, iter) => {
   // create new tab
   const page = await browser.newPage();
-  
+
   // set up listener to log out anything we "console.log"
   page.on('console', (msg) => {
-    if (msg._args){
+    if (msg._args) {
       for (let i = 0; i < msg._args.length; ++i)
-      console.log(`${i}: ${msg._args[i]}`);
+        console.log(`${i}: ${msg._args[i]}`);
     }
   });
 
@@ -284,4 +282,4 @@ const main = async (linkedinArr) => {
   }
 };
 
-main(linkedinArr);
+main(targetLinks);
