@@ -241,28 +241,27 @@ const connectAndEndorse = async (browser, link, iter) => {
     console.log('past navigation');
 
     // now endorse!
-    await page.evaluate(() => {
+    await page.evaluate(async () => {
       // credit to Julia, Mike, and Augusto for the below code. You sparked the idea to create this repo!
-      setTimeout(async () => {
-        // Once on the skills page, scroll to the bottom:
-        let prev = 0;
-        let cur = document.body.scrollHeight;
-        while (cur !== prev) {
-          window.scrollTo(0, document.body.scrollHeight);
-          await asyncWait(500);
-          prev = cur;
-          cur = document.body.scrollHeight;
-          if (cur === prev) break;
+
+      // Once on the skills page, scroll to the bottom:
+      let prev = 0;
+      let cur = document.body.scrollHeight;
+      while (cur !== prev) {
+        window.scrollTo(0, document.body.scrollHeight);
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        prev = cur;
+        cur = document.body.scrollHeight;
+        if (cur === prev) break;
+      }
+      // Locate all skills buttons and click them:
+      var skills = document.querySelectorAll('.pv2 > .artdeco-button--muted');
+      for (var i = 0; i < skills.length; ++i) {
+        if (skills[i].innerText === 'Endorse') {
+          console.log(skills[i]);
+          await skills[i].click();
         }
-        // Locate all skills buttons and click them:
-        var skills = document.querySelectorAll('.pv2 > .artdeco-button--muted');
-        for (var i = 0; i < skills.length; ++i) {
-          if (skills[i].innerText === 'Endorse') {
-            console.log(skills[i]);
-            skills[i].click();
-          }
-        }
-      }, 2000);
+      }
     });
   }
 };
