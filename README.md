@@ -36,7 +36,7 @@ a.forEach((el) => {
 b;
 ```
 
-Copy out all elements from b and update the `linkedInArr` found in profiles.js.
+Copy out all elements from b and update the `targetLinks` array found in profiles.js.
 
 # Fun facts
 
