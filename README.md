@@ -15,7 +15,7 @@ LINKEDINUSERNAME=thisISmyUSERname
 LINKEDINPASSWORD=$uper$ecretpa$$word!
 ```
 
-Fill out the `MYLINKEDIN` variable with your own linkedin url. We use your own profile as the first link to sign in to linkedin, so we don't run into snags when we open other pages.
+Fill out the `MYLINKEDIN` variable with your own linkedin url, and LINKEDINUSERNAME/LINKEDINPASSWORD with your own credentials. We use your own profile as the first link to sign in to linkedin, so we don't run into snags when we open other pages.
 
 3. To launch the script, run `npm run start` in your terminal.
 
