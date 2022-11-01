@@ -53,4 +53,4 @@ The lighter was invented before the match.
 
 ---
 
-If you have another fun fact for this repo, feel free to make a PR. I'll even give you credit 😉
+If you have an improvement for this repo, or even just another fun fact, feel free to make a PR.
