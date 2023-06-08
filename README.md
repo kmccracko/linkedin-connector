@@ -49,8 +49,6 @@ This script is going to open a whole bunch of tabs. If you don't want that to ha
 
 This script might break for you; it hasn't been tested very thoroughly.
 
-The lighter was invented before the match.
-
 ---
 
-If you have an improvement for this repo, or even just another fun fact, feel free to make a PR.
+If you have an improvement for this repo, feel free to make a PR.
